@@ -1,5 +1,12 @@
 ---
 - hosts: localhost
-  remote_user: root
+  gather_facts: no
+  vars_files:
+   - "vars/tenant.yml"
+  vars:
+    # VPC
+    vpc_name: "{{ vms[ecs_name].vpc_name  }}"
+    vpc_net: "{{ vms[ecs_name].vpc_net  }}"
   roles:
-    - otc_vpc
+    - role: "otc_auth"
+    - role: "otc_vpc"

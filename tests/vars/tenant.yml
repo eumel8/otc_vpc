@@ -1,0 +1,8 @@
+---
+default:
+  vpc_name: "ansible-vpc01"
+  vpc_net: "192.168.0.0/16"
+vms:
+  ansible-test02:
+    vpc_name: "ansible-vpc02"
+    vpc_net: "192.168.0.0/16"
