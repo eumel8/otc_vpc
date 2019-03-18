@@ -19,7 +19,8 @@
   when:
     - vpc_id is defined
 
-- set_fact:
+- name: Set Fact external_network_id
+  set_fact:
     external_network_id: "{{ (routerlist.content|from_json)|json_query('router.external_gateway_info.network_id') }}"
   when: routerlist is defined
 
