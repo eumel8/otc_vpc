@@ -20,7 +20,7 @@
     - vpc_id is defined
 
 - name: Set Router facts
-   set_fact:
+  set_fact:
     router_id: "{{ (routerlist.content|from_json)|json_query('router.id') }}"
     router_name: "{{ (routerlist.content|from_json)|json_query('router.name') }}"
     router_status: "{{ (routerlist.content|from_json)|json_query('router.status') }}"
