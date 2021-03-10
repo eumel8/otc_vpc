@@ -1,4 +1,5 @@
 *.retry
+.cache
 .eggs/
 tests/roles
 .tox/

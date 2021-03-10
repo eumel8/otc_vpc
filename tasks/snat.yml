@@ -5,7 +5,7 @@
   uri:
     url: "{{ AUTH_URL_VPC }}/v2.0/routers/{{ vpc_id }}"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -29,7 +29,7 @@
     url: "{{ AUTH_URL_VPC }}/v2.0/routers/{{ vpc_id }}"
     method: PUT
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
