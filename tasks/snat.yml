@@ -46,5 +46,6 @@
     - enable_snat is defined
     - external_network_id|length != 0
 
-- debug:
+- name: router
+  debug:
     msg: "{{ router }}"

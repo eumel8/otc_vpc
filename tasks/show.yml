@@ -19,5 +19,6 @@
   when:
     - vpc_id is defined
 
-- debug:
+- name: vpcdetail
+  debug:
     msg: "{{ vpcdetail.json }}"

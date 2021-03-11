@@ -14,5 +14,6 @@
   until: vpclist.status == 200
   changed_when: false
 
-- debug:
+- name: vpclist
+  debug:
     msg: "{{ vpclist.json }}"

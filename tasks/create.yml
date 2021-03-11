@@ -23,7 +23,8 @@
   when:
     - not vpc_id or vpc_id is undefined
 
-- debug:
+- name: vpc
+  debug:
     msg: "{{ vpc }}"
 
 - name: Lookup vpc_id

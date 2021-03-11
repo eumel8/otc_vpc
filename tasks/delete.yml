@@ -20,6 +20,7 @@
   changed_when: false
   when: vpc_id is defined and vpc_id|length != 0
 
-- debug:
+- name: vpc
+  debug:
     msg: "{{ vpc }}"
   when: vpc_id is defined
