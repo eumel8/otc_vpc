@@ -5,7 +5,7 @@
   uri:
     url: "{{ AUTH_URL_VPC }}/v2.0/routers/{{ vpc_id }}"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -33,7 +33,8 @@
     - vpc_id is defined
     - routerlist is defined
 
-- debug:
+- name: routerlist
+  debug:
     msg: "{{ routerlist.json }}"
   when:
     - vpc_id is defined

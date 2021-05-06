@@ -6,7 +6,7 @@
     url: "{{ AUTH_URL_VPC }}/v1/{{ PROJECT_ID }}/vpcs/{{ vpc_id}}"
     method: DELETE
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     status_code: 200,201,202,203,204
@@ -20,6 +20,7 @@
   changed_when: false
   when: vpc_id is defined and vpc_id|length != 0
 
-- debug:
+- name: vpc
+  debug:
     msg: "{{ vpc }}"
   when: vpc_id is defined

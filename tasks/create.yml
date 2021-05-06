@@ -8,7 +8,7 @@
     url: "{{ AUTH_URL_VPC }}/v1/{{ PROJECT_ID }}/vpcs"
     method: POST
     body_format: raw
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -23,7 +23,8 @@
   when:
     - not vpc_id or vpc_id is undefined
 
-- debug:
+- name: vpc
+  debug:
     msg: "{{ vpc }}"
 
 - name: Lookup vpc_id
